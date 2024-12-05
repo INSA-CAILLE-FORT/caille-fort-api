@@ -19,5 +19,12 @@ public class Podcast {
     @Column(nullable = false)
     private String fileUrl; // Path or URL to the podcast file
 
+    @Column(nullable = true)
+    private String filePath; // Path to the locally stored file
+
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
+    }
+
     // Getters and Setters
 }

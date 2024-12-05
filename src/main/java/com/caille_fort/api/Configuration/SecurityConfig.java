@@ -14,9 +14,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         // Autoriser Swagger sans authentification
-                        .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers("/api/users/register", "/api/users/login", "/api/users/logout", "/api/database/**").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults()) // Authentification HTTP basique (désactivée pour Swagger)
                 .csrf(csrf -> csrf.disable()); // Désactiver CSRF pour simplifier les tests

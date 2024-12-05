@@ -25,5 +25,13 @@ public class Question {
     @Column(name = "answer")
     private List<String> incorrectAnswers;
 
+    @ManyToOne
+    @JoinColumn(name = "ocean_part_id")
+    private OceanPart oceanPart;
+
+    @ManyToOne
+    @JoinColumn(name = "organ_id")
+    private Organ organ;
+
     // Getters and Setters
 }

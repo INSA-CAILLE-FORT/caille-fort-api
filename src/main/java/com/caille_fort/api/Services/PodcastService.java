@@ -20,10 +20,14 @@ public class PodcastService {
         return podcastRepository.findAll();
     }
 
-    public Optional<Podcast> getPodcastById(Long id) {
-        return podcastRepository.findById(id);
+    public Podcast getPodcastById(Long id) {
+        Optional<Podcast> podcast = podcastRepository.findById(id);
+        return podcast.orElse(null);
     }
 
+    public Podcast updatePodcast(Podcast podcast) {
+        return podcastRepository.save(podcast);
+    }
     public Podcast savePodcast(Podcast podcast) {
         return podcastRepository.save(podcast);
     }
