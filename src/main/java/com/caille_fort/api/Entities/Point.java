@@ -22,4 +22,37 @@ public class Point {
     private OceanPart oceanPart;
 
     // Getters and Setters
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Organ getOrgan() {
+        return organ;
+    }
+
+    public void setOrgan(Organ organ) {
+        this.organ = organ;
+    }
+
+    public OceanPart getOceanPart() {
+        return oceanPart;
+    }
+
+    public void setOceanPart(OceanPart oceanPart) {
+        this.oceanPart = oceanPart;
+    }
 }
