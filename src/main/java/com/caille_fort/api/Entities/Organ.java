@@ -1,6 +1,5 @@
 package com.caille_fort.api.Entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class Organ {
     private String name;
 
     @OneToMany(mappedBy = "organ", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
     private List<Question> questions;
 
     // Getters and Setters

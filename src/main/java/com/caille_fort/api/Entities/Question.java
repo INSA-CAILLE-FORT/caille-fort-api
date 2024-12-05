@@ -16,14 +16,17 @@ public class Question {
     private String text;
 
     @Column(nullable = false)
-    private String status; // Ex: "benefit", "consequence", "learn", "share", "act"
+    private String description; // Ajout de la description
+
+    @Column(nullable = false)
+    private String status; // Ex: "description", "benefit", "consequence", "learn", "share", "act"
 
     @Column(nullable = false)
     private String correctAnswer;
 
     @ElementCollection
     @CollectionTable(name = "incorrect_answers", joinColumns = @JoinColumn(name = "question_id"))
-    @Column(name = "answer")
+    @Column(name = "incorrect_answers")
     private List<String> incorrectAnswers;
 
     @ManyToOne
@@ -37,7 +40,6 @@ public class Question {
     private Organ organ;
 
     // Getters and Setters
-
 
     public Long getId() {
         return id;
@@ -53,6 +55,14 @@ public class Question {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getStatus() {

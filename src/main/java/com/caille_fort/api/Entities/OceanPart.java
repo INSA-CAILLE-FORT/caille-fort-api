@@ -1,6 +1,5 @@
 package com.caille_fort.api.Entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class OceanPart {
     private String name;
 
     @OneToMany(mappedBy = "oceanPart", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
     private List<Question> questions;
 
     // Getters and Setters
