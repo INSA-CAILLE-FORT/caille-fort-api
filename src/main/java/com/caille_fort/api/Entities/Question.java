@@ -24,10 +24,8 @@ public class Question {
     @Column(nullable = false)
     private String correctAnswer;
 
-    @ElementCollection
-    @CollectionTable(name = "incorrect_answers", joinColumns = @JoinColumn(name = "question_id"))
-    @Column(name = "incorrect_answers")
-    private List<String> incorrectAnswers;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<IncorrectAnswer> incorrectAnswers;
 
     @ManyToOne
     @JoinColumn(name = "ocean_part_id")
@@ -81,11 +79,11 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    public List<String> getIncorrectAnswers() {
+    public List<IncorrectAnswer> getIncorrectAnswers() {
         return incorrectAnswers;
     }
 
-    public void setIncorrectAnswers(List<String> incorrectAnswers) {
+    public void setIncorrectAnswers(List<IncorrectAnswer> incorrectAnswers) {
         this.incorrectAnswers = incorrectAnswers;
     }
 
