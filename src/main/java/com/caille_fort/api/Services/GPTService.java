@@ -15,9 +15,12 @@ import java.net.http.HttpResponse;
 @Service
 public class GPTService {
 
-    private static final Dotenv dotenv = Dotenv.load();
-    private static final String API_KEY = dotenv.get("OPENAI_API_KEY");
-    private static final String API_URL = dotenv.get("OPENAI_API_URL");
+//     private static final Dotenv dotenv = Dotenv.load();
+//     private static final String API_KEY = dotenv.get("OPENAI_API_KEY");
+//     private static final String API_URL = dotenv.get("OPENAI_API_URL");
+
+    private static final String API_KEY = System.getenv("OPENAI_API_KEY");
+private static final String API_URL = System.getenv("OPENAI_API_URL");
 
     private final Gson gson = new Gson();
 
