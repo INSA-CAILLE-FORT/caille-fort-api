@@ -3,6 +3,8 @@ package com.caille_fort.api.Entities;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "ocean_parts")
 public class OceanPart {
@@ -15,6 +17,7 @@ public class OceanPart {
     private String name;
 
     @OneToMany(mappedBy = "oceanPart", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Question> questions;
 
     // Getters and Setters

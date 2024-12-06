@@ -3,6 +3,9 @@ package com.caille_fort.api.Entities;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "organs")
 public class Organ {
@@ -15,6 +18,7 @@ public class Organ {
     private String name;
 
     @OneToMany(mappedBy = "organ", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Question> questions;
 
     // Getters and Setters
