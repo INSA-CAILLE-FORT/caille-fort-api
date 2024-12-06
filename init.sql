@@ -1,3 +1,7 @@
+CREATE DATABASE caille;
+
+\c caille
+
 -- DROP EXISTING TABLES
 DROP TABLE IF EXISTS incorrect_answers CASCADE;
 DROP TABLE IF EXISTS questions CASCADE;
