@@ -1,15 +1,17 @@
 package com.caille_fort.api.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "incorrect_answer")
+@Table(name = "incorrect_answers")
 public class IncorrectAnswer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
