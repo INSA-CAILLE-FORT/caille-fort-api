@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/points")
+@CrossOrigin(origins = "https://insa-caille-fort.fr")
 public class PointController {
 
     private final PointService pointService;

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/chatgpt")
+@CrossOrigin(origins = "https://insa-caille-fort.fr")
 public class GPTController {
 
     @Autowired

@@ -19,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/podcasts")
+@CrossOrigin(origins = "https://insa-caille-fort.fr")
 public class PodcastController {
 
     private final PodcastService podcastService;

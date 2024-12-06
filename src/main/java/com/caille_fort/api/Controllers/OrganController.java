@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/organs")
+@CrossOrigin(origins = "https://insa-caille-fort.fr")
 public class OrganController {
 
     private final OrganService organService;

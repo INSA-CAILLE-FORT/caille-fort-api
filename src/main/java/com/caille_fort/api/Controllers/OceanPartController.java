@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ocean-parts")
+@CrossOrigin(origins = "https://insa-caille-fort.fr")
 public class OceanPartController {
 
     private final OceanPartService oceanPartService;

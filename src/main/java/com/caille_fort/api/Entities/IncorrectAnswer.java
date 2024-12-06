@@ -3,6 +3,7 @@ package com.caille_fort.api.Entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "incorrect_answer")
 public class IncorrectAnswer {
 
     @Id
