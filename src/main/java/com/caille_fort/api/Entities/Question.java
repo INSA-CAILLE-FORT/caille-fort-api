@@ -1,6 +1,7 @@
 package com.caille_fort.api.Entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class Question {
     @Column(nullable = false)
     private String correctAnswer;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<IncorrectAnswer> incorrectAnswers;
 
